@@ -1,0 +1,5 @@
+data base doesnt have a user name and a password
+but make sure to add the user name as 'root' otherwise it wont work
+
+make sure to add mysql connector to the project structure or some errors might raise.
+the connector is stored in "P:\MySQL\mysql-connector-j-9.4.0\mysql-connector-j-9.4.0.jar"

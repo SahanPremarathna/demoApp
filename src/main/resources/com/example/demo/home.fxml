@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D97D55;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.HomeController">
+   <children>
+      <Label layoutX="535.0" layoutY="8.0" text="Home Sweet Home" textAlignment="CENTER" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <SplitPane dividerPositions="0.17676526717557248" layoutX="6.0" layoutY="60.0" prefHeight="658.0" prefWidth="1280.0">
+         <items>
+            <VBox prefHeight="397.0" prefWidth="140.0" spacing="10" style="-fx-background-color: #D97D55; -fx-padding: 20;">
+               <children>
+                  <Label text="My App" textFill="white">
+                     <font>
+                        <Font size="20" />
+                     </font>
+                  </Label>
+                  <Button onAction="#actionHome" style="-fx-background-color: transparent;" text="🏠 Home" textFill="white" />
+                  <Button onAction="#actionStudentRecords" style="-fx-background-color: transparent;" text="Student Records" textFill="white" />
+                  <Button onAction="#actionSettings" style="-fx-background-color: transparent;" text="⚙️ Settings" textFill="white" />
+                  <Button onAction="#actionLogout" style="-fx-background-color: transparent;" text="🚪 Logout" textFill="white" />
+                  <Pane prefHeight="448.0" prefWidth="183.0">
+                     <children>
+                        <Button layoutX="42.0" layoutY="388.0" mnemonicParsing="false" onAction="#actionShutdown" style="-fx-background-color: transparent;" text="❌ Power Off" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <SplitPane prefWidth="1005.0" style="-fx-background-color: white; -fx-border-width: 0; -fx-padding: 10;">
+               <items>
+                  <Pane prefHeight="636.0" prefWidth="399.0" style="-fx-background-color: #fff; -fx-border-radius: 10; -fx-background-radius: 10;">
+                     <children>
+                        <Label layoutX="70.0" layoutY="225.0" text="HOME IS TOO MUCH TO MAKE">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="300.0" layoutY="318.0" text="DO NOT JUDGE ME ">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

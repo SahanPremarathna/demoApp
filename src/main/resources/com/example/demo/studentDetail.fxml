@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D97D55;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.StudentDetailController">
+    <children>
+        <Label layoutX="535.0" layoutY="7.0" text="Student Details" textAlignment="CENTER" textFill="WHITE" underline="true">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <SplitPane dividerPositions="0.17676526717557248" layoutX="6.0" layoutY="60.0" prefHeight="658.0" prefWidth="1280.0">
+            <items>
+                <VBox prefHeight="397.0" prefWidth="140.0" spacing="10" style="-fx-background-color: #D97D55; -fx-padding: 20;">
+                    <children>
+                        <Label text="My App" textFill="white">
+                            <font>
+                                <Font size="20" />
+                            </font>
+                        </Label>
+                        <Button onAction="#actionHome" style="-fx-background-color: transparent;" text="🏠 Home" textFill="white" />
+                        <Button onAction="#actionStudentRecords" style="-fx-background-color: transparent;" text="Student Records" textFill="white" />
+                        <Button onAction="#actionSettings" style="-fx-background-color: transparent;" text="⚙️ Settings" textFill="white" />
+                        <Button onAction="#actionLogout" style="-fx-background-color: transparent;" text="🚪 Logout" textFill="white" />
+                  <Pane prefHeight="448.0" prefWidth="183.0">
+                     <children>
+                        <Button layoutX="42.0" layoutY="388.0" mnemonicParsing="false" onAction="#actionShutdown" style="-fx-background-color: transparent;" text="❌ Power Off" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                    </children>
+                </VBox>
+                <SplitPane dividerPositions="0.3481726283048212" prefWidth="1005.0" style="-fx-background-color: white; -fx-border-width: 0; -fx-padding: 10;">
+                    <items>
+                        <Pane prefHeight="636.0" prefWidth="399.0" style="-fx-background-color: #fff; -fx-border-radius: 10; -fx-background-radius: 10;">
+                            <children>
+                                <VBox layoutX="17.0" layoutY="208.0" prefHeight="353.0" prefWidth="321.0" spacing="10.0">
+                                    <children>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Name" />
+                                                <TextField fx:id="txtName" />
+                                            </children>
+                                        </VBox>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Contact number" />
+                                                <TextField fx:id="txtContactNumber" />
+                                            </children>
+                                        </VBox>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Course" />
+                                                <TextField fx:id="txtCourse" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="587.0" prefHeight="36.0" prefWidth="331.0" style="-fx-padding: 5;">
+                                    <children>
+                                        <HBox spacing="10.0">
+                                            <children>
+                                                <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#actionAdd" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: B8C4A9;" text="Add" />
+                                                <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#actionUpdate" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: B8C4A9;" text="Update" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="168.0" spacing="10.0">
+                                            <children>
+                                                <Button fx:id="btnDelete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionDelete" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #D97D55;" text="Delete" textAlignment="CENTER" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                        <Pane layoutX="101.0" layoutY="36.0" prefHeight="168.0" prefWidth="160.0" style="-fx-border-color: #D97D55;">
+                           <children>
+                              <ImageView fx:id="imageContainer" fitHeight="168.0" fitWidth="160.0" pickOnBounds="true" />
+                              <Button layoutX="130.0" layoutY="4.0" mnemonicParsing="false" onAction="#actionAddImage" prefHeight="18.0" prefWidth="13.0" style="-fx-background-color: #80FFFFFF; -fx-border-color: #D97D55;" text="~" textFill="#d97d55" />
+                           </children>
+                        </Pane>
+                            </children>
+                        </Pane>
+                        <TableView fx:id="studentTable" prefHeight="657.0" prefWidth="638.0" style="-fx-background-color: #fff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 0;">
+                            <columns>
+                                <TableColumn fx:id="studentIdCol" prefWidth="154.40005779266357" text="StudentID" />
+                                <TableColumn fx:id="nameCol" minWidth="0.0" prefWidth="223.99998474121094" text="Name" />
+                                <TableColumn fx:id="contactNumberCol" prefWidth="152.0" text="Contact Number" />
+                                <TableColumn fx:id="courseCol" minWidth="0.0" prefWidth="140.7999267578125" text="Course" />
+                            </columns>
+                        </TableView>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
