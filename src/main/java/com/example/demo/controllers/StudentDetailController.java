@@ -161,7 +161,7 @@ public class StudentDetailController extends BaseController {
                 st.setName(queryResult.getString("name"));
                 st.setMobile(queryResult.getString("contact_number"));
                 st.setCourse(queryResult.getString("course"));
-                st.setImagePath(queryResult.getString("image_path")); // store image path only
+                st.setImagePath(queryResult.getString("image_path"));
                 students.add(st);
             }
 
