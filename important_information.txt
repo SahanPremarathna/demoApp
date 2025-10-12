@@ -1,9 +1,8 @@
-data base doesnt have a user name and a password
-but make sure to add the user name as 'root' otherwise it wont work
+intllij project with sqlite as the db
 
+add the lib/sqlite to the project structure in-order to work properly
 
+credentials -
+username : root
+password : toor
 
-Current database name is demologinpage
-the sql table should have
-studentdata -> (id, name , contact_number, course, image path)
-useraccounts -> (idUserAccounts, Firstname, Lastname, Username, Password)
