@@ -21,10 +21,17 @@ public class SettingsController extends BaseController {
 
     @FXML
     void actionClearData(ActionEvent event) {
-        String clearQuery = "TRUNCATE TABLE "+SQLiteDBConnection.DATA_TABLE_NAME+";";
+        String clearQuery = "DELETE FROM " + SQLiteDBConnection.DATA_TABLE_NAME + ";";
+        String resetIncrementQuery = "DELETE FROM sqlite_sequence WHERE name='" + SQLiteDBConnection.DATA_TABLE_NAME + "';";
 
-        try(PreparedStatement ps = connectDB.prepareStatement(clearQuery)){
+        try (PreparedStatement ps = connectDB.prepareStatement(clearQuery)) {
             ps.executeUpdate();
+
+            // Reset the autoincrement counter
+            try (PreparedStatement resetPs = connectDB.prepareStatement(resetIncrementQuery)) {
+                resetPs.executeUpdate();
+            }
+
             // Delete all images in the images folder
             File imageFolder = new File("images");  // adjust path if needed
             if (imageFolder.exists() && imageFolder.isDirectory()) {
@@ -43,11 +50,10 @@ public class SettingsController extends BaseController {
 
             AlertUser.clearDatabase();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             AlertUser.error("Something went wrong clearing the data");
             e.printStackTrace();
         }
-
     }
 
 
