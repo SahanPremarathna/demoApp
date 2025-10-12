@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.utils.DatabaseConnection;
+import com.example.demo.utils.SQLiteDBConnection;
 import com.example.demo.utils.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,7 +48,7 @@ public class LoginController extends BaseController {
     }
 
     public void validateLogin(){
-        DatabaseConnection connectionNow = new DatabaseConnection();
+        SQLiteDBConnection connectionNow = new SQLiteDBConnection();
         Connection connectDB = connectionNow.getConnection();
 
         String varifyLogin = "SELECT count(1) FROM "+DatabaseConnection.getCredentialTableName()+" WHERE Username = '"+usernameTextField.getText()+"' AND Password = '"+passwordPasswordField.getText()+"'";

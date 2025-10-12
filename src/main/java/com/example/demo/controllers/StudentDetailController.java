@@ -1,9 +1,10 @@
 package com.example.demo.controllers;
 
 import com.example.demo.utils.AlertUser;
-import com.example.demo.utils.DatabaseConnection;
+//import com.example.demo.utils.DatabaseConnection;
 import com.example.demo.utils.ImageHandler;
 import com.example.demo.models.Student;
+import com.example.demo.utils.SQLiteDBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,7 +37,7 @@ public class StudentDetailController extends BaseController {
     int myIndex;
     int id;
 
-    DatabaseConnection connectionNow = new DatabaseConnection();
+    SQLiteDBConnection connectionNow = new SQLiteDBConnection();
     Connection connectDB = connectionNow.getConnection();
 
     @FXML

@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.utils.SceneManager;
+import com.example.demo.utils.TableInitializer;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -8,6 +9,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage stage)  {
+        TableInitializer.initialize();
         SceneManager.switchScene(stage, "/com/example/demo/login.fxml");
 //        SceneManager.switchScene(stage, "/com/example/demo/studentDetail.fxml");
     }

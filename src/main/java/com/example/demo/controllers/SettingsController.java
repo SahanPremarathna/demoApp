@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.utils.AlertUser;
 import com.example.demo.utils.DatabaseConnection;
+import com.example.demo.utils.SQLiteDBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,12 +16,12 @@ public class SettingsController extends BaseController {
     @FXML
     private Button btnClear;
 
-    DatabaseConnection connectionNow = new DatabaseConnection();
+    SQLiteDBConnection connectionNow = new SQLiteDBConnection();
     Connection connectDB = connectionNow.getConnection();
 
     @FXML
     void actionClearData(ActionEvent event) {
-        String clearQuery = "TRUNCATE TABLE "+DatabaseConnection.DATA_TABLE_NAME+";";
+        String clearQuery = "TRUNCATE TABLE "+SQLiteDBConnection.DATA_TABLE_NAME+";";
 
         try(PreparedStatement ps = connectDB.prepareStatement(clearQuery)){
             ps.executeUpdate();
